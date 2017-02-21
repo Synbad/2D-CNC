@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CNC UI for UPRM Aero Design</title>
+	<link rel="stylesheet" type="text/css" href="C:\Program Files\Sublime Text 3\Written Code\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="CNC UI.css">
+	<script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.min.js"></script>
+	<script type="text/javascript" src="fabric.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="CNC UI.html"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span>RUM Air CNC Cutter UI</a>
+      <!-- Make this a home button. For this, the nav bar must appear on all windows-->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:canvasNew()">New</a></li> <!-- Clear canvas. Make an option to save canvas if it has not been saved. -->
+            <li><a href="#">Open</a></li> <!-- Load registry of previous created canvas. -->
+            <li><a href="#">Save</a></li> <!-- Save canvas into registry. -->
+            <li><a href="javascript:document.getElementById('file').click();"><input type="file" style="display:none;" id="file" name="file"/>Import</a></li>     <!-- Import SVG image from computer. -->
+            <li><a href="Img_to_SVG.html">Convert To SVG</a></li> <!-- Goes to image converter utility. -->
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Edit<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Undo</a></li>
+            <!-- Restore previous canvas. -->
+            <li><a href="#">Redo</a></li>
+            <!-- Undo undo. -->
+            <li><a href="javascript:" id="delete">Delete</a></li>
+            <!-- Delete selected entity. -->
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Starting Points</a></li>
+            <li><a href="#">Route</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ruler</a></li>
+          </ul>
+        </li>
+        <li>
+          <a id="tracebtn" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Trace <span class="fa fa-pencil" aria-hidden="true"></span></a> 
+        </li>
+      </ul>
+
+
+
+        <!-- Make an enter button or search button if there is nothing in  the form or entered name is incorrect -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="fa fa-user-plus" aria-hidden="true"></span>Sign Up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle-o" aria-hidden="true"></span>Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Log out <span class="fa fa-sign-out" aria-hidden="true"></span></a></li>
+            <li><a href="#">Saved Canvas <span class="fa fa-archive" aria-hidden="true"></span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- js code no me deja bajar la imagen consecutivamente -->
+<div class="coordinates">
+	<canvas id="canvas" width="800" height="600" fireRightClick = true ></canvas>
+</div>
+
+<div class="coordinates">
+	<textarea id="txt" rows="28" cols="60"></textarea>
+</div>
+
+
+	<script src="http://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="CNC UI.js"></script>
+
+</body>
+</html>
